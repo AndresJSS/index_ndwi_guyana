@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_37bd42935cce7733d19f9d5731733b21 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+    <div style="position: fixed; bottom: 50px; left: 50px; width: 400px; z-index: 9999; 
+                background-color: rgba(255, 255, 255, 0.85); padding: 15px; border-radius: 8px; 
+                box-shadow: 0 2px 5px rgba(0,0,0,0.3); font-family: Arial, sans-serif;">
+        <div style="font-weight: bold; text-align: left; margin-bottom: 5px; color: black; font-size: 14px;">
+            NDWI Index
+        </div>
+        <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+            <span style="flex: 1; font-weight: bold; text-align: center; color: black; font-size: 11px;">-1.0</span><span style="flex: 1; font-weight: bold; text-align: center; color: black; font-size: 11px;">-0.8</span><span style="flex: 1; font-weight: bold; text-align: center; color: black; font-size: 11px;">-0.6</span><span style="flex: 1; font-weight: bold; text-align: center; color: black; font-size: 11px;">-0.4</span><span style="flex: 1; font-weight: bold; text-align: center; color: black; font-size: 11px;">-0.2</span><span style="flex: 1; font-weight: bold; text-align: center; color: black; font-size: 11px;">0.0</span><span style="flex: 1; font-weight: bold; text-align: center; color: black; font-size: 11px;">0.2</span><span style="flex: 1; font-weight: bold; text-align: center; color: black; font-size: 11px;">0.4</span><span style="flex: 1; font-weight: bold; text-align: center; color: black; font-size: 11px;">0.6</span><span style="flex: 1; font-weight: bold; text-align: center; color: black; font-size: 11px;">0.8</span><span style="flex: 1; font-weight: bold; text-align: center; color: black; font-size: 11px;">1.0</span>
+        </div>
+        <div style="display: flex; margin-bottom: 15px;">
+            <div style="flex: 1; height: 15px; background-color: #f8efca;"></div><div style="flex: 1; height: 15px; background-color: #c8dc92;"></div><div style="flex: 1; height: 15px; background-color: #97c958;"></div><div style="flex: 1; height: 15px; background-color: #17c778;"></div><div style="flex: 1; height: 15px; background-color: #179e78;"></div><div style="flex: 1; height: 15px; background-color: #5177a4;"></div><div style="flex: 1; height: 15px; background-color: #7754cd;"></div><div style="flex: 1; height: 15px; background-color: #6257a4;"></div><div style="flex: 1; height: 15px; background-color: #3f1a71;"></div><div style="flex: 1; height: 15px; background-color: #102a54;"></div><div style="flex: 1; height: 15px; background-color: #000033;"></div>
+        </div>
+        <div style="font-size: 14px; color: black; font-weight: bold; text-align: center;">
+            Guyana | 2019 | 1er semester (Jan - Jun)
+        </div>
+    </div>
+    
+    
+            <div class="folium-map" id="map_37bd42935cce7733d19f9d5731733b21" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_37bd42935cce7733d19f9d5731733b21 = L.map(
+                "map_37bd42935cce7733d19f9d5731733b21",
+                {
+                    center: [4.7829741398643355, -58.97349900698449],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 6,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_d377b2b3cb2128e7a84a845d6a88ae92 = L.tileLayer(
+                "https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "Tiles \u0026copy; Esri \u0026mdash; Esri, DeLorme, NAVTEQ",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_d377b2b3cb2128e7a84a845d6a88ae92.addTo(map_37bd42935cce7733d19f9d5731733b21);
+        
+    
+            var tile_layer_4830e8788f5ca7e5102b7c3bd55c8dbf = L.tileLayer(
+                "https://earthengine.googleapis.com/v1/projects/iica-cimag/maps/d1fb59c15782f508efac24bd4e6026a7-8d5096ee1b489b41e2d83f4a1669b74b/tiles/{z}/{x}/{y}",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "Google Earth Engine",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_4830e8788f5ca7e5102b7c3bd55c8dbf.addTo(map_37bd42935cce7733d19f9d5731733b21);
+        
+    
+            var tile_layer_4f3bb9db07e357774b408f75157c78ad = L.tileLayer(
+                "https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Reference/MapServer/tile/{z}/{y}/{x}",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "Tiles \u0026copy; Esri \u0026mdash; Esri, DeLorme, NAVTEQ",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_4f3bb9db07e357774b408f75157c78ad.addTo(map_37bd42935cce7733d19f9d5731733b21);
+        
+</script>
+</html>
